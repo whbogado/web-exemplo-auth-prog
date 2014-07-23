@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:ice="http://www.icesoft.com/icefaces/component"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/layout.xhtml">
+
+    <ui:define name="content">
+        <h:form>
+             <ice:outputText value="Usuário: ${facesContext.externalContext.userPrincipal.name}"
+                             rendered="${!empty facesContext.externalContext.userPrincipal}"/>
+            <div>
+                <ice:outputText value="PÁGINA PRINCIPAL"/>
+            </div>
+            <a href="${facesContext.externalContext.requestContextPath}/admin/admin.xhtml">Acesso do Administrador</a><br/>
+            <a href="${facesContext.externalContext.requestContextPath}/prof/professor.xhtml">Acesso do Professor</a><br/>
+            <a href="${facesContext.externalContext.requestContextPath}/aluno/aluno.xhtml">Acesso do Aluno</a><br/>
+        </h:form>
+    </ui:define>
+</ui:composition>

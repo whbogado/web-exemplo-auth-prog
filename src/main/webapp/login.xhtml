@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:ice="http://www.icesoft.com/icefaces/component"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/layout.xhtml">
+
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="result" value="#{loginBean.result}"/>
+        </f:metadata>
+    </ui:define>
+    
+    <ui:define name="content">
+        <ice:form>
+            <div style="margin: 1em 0">
+                <div style="margin: 0.5em 0">
+                    <ice:outputLabel for="usuarioInput" style="display: inline-block; width: 45px">Usuário</ice:outputLabel>>
+                    <ice:inputText id="usuarioInput" value="#{loginBean.login}"/>
+                </div>
+                <div style="margin: 0.5em 0">
+                    <ice:outputLabel for="senhaInput" style="display: inline-block; width: 45px">Senha</ice:outputLabel>
+                    <ice:inputSecret id="senhaInput" value="#{loginBean.senha}"/>
+                </div>
+            </div>
+            <ice:commandButton value="Entrar" style="width: 120px" action="#{loginBean.loginAction}"/>
+            <ice:messages/>
+        </ice:form>
+    </ui:define>
+    
+</ui:composition>
